@@ -20,13 +20,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     z-index: -2;
     filter: brightness(0.35) saturate(1.5);
   }
 
-  /* затемнение поверх видео */
+  /* затемнение */
   .dark-overlay {
     position: fixed;
     inset: 0;
@@ -66,7 +65,6 @@
   header {
     text-align: center;
     padding: 90px 20px;
-
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1s ease forwards;
@@ -115,7 +113,6 @@
     justify-content: center;
     gap: 25px;
     padding: 70px;
-
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1s ease forwards;
@@ -130,7 +127,6 @@
     border: 1px solid rgba(0,245,255,0.3);
     border-radius: 14px;
     text-align: center;
-
     transition: 0.3s ease;
     box-shadow: 0 0 10px rgba(0,245,255,0.1);
   }
@@ -193,8 +189,8 @@
 
 <body>
 
-<!-- ================= VIDEO (если нет файла — просто не покажется) ================= -->
-<video class="bg-video" autoplay muted loop playsinline>
+<!-- ================= VIDEO (SAFE VERSION) ================= -->
+<video class="bg-video" autoplay muted loop playsinline onerror="this.style.display='none'">
   <source src="video.mp4" type="video/mp4">
 </video>
 
